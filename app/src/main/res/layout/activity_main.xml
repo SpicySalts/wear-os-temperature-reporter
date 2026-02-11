@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Spacer to push content down -->
+    <View
+        android:id="@+id/topSpacer"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Temperature Reporter"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/topSpacer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No data yet"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tvHeading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/ivStatusImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="Status Image"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/tvStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.40"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvAverageTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="N/A °F"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/ivStatusImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/etInputTemperature"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:inputType="numberDecimal"
+        android:hint="Enter temperature"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:fontFamily="serif"
+        android:background="@android:drawable/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/tvAverageTemperature"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnReport"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"/>
+
+    <Button
+        android:id="@+id/btnReport"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:text="Report"
+        android:textSize="16sp"
+        android:fontFamily="serif"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="@id/etInputTemperature"
+        app:layout_constraintBottom_toBottomOf="@id/etInputTemperature"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Switch
+        android:id="@+id/switchUnit"
+        android:layout_width="180dp"
+        android:layout_height="65dp"
+        android:text="Celsius"
+        android:textSize="20sp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/etInputTemperature"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
